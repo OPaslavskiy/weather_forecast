@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
+
 import { getDayName } from "../../services/getDayName";
 
-const WetherToday = () => {
+const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items.days;
   // console.log(`selectWeatherToday=====>>>>`, selectWeatherToday);
   let weatherToday = useSelector(selectWeatherToday);
@@ -20,4 +21,4 @@ const WetherToday = () => {
   );
 };
 
-export default WetherToday;
+export default WeatherToday;

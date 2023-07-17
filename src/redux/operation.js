@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 // import Notiflix from 'notiflix';
 import axios from "axios";
 
-export const API_KEY = "6V5PSUEREE8VQ9XXCVRWEES22";
+export const API_KEY = "YEJHR9XEXGX5TVSSTQMGVT6BW";
 
 axios.defaults.baseURL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";

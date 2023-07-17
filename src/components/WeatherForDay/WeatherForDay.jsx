@@ -1,7 +1,7 @@
 import { getDayName } from "../../services/getDayName";
 
 // eslint-disable-next-line react/prop-types
-const WetherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
+const WeatherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
   const dayName = getDayName(datetime);
 
   return (
@@ -15,4 +15,4 @@ const WetherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
   );
 };
 
-export default WetherForDay;
+export default WeatherForDay;

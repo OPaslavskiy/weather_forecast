@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import WetherForDay from "../WetherForDay/WeatherForDay";
+import WeatherForDay from "../WeatherForDay/WeatherForDay";
 
-const WetherTimeBox = () => {
+const WeatherTimeBox = () => {
   const selectWeather = (state) => state.weatherTime.items.days;
   const weatherForDays = useSelector(selectWeather);
   // console.log(`weather=====>>>>`, weatherForDays);
@@ -10,11 +10,11 @@ const WetherTimeBox = () => {
     <div>
       <ul>
         {weatherForDays?.map((day) => (
-          <WetherForDay key={day.datetime} props={day} />
+          <WeatherForDay key={day.datetime} props={day} />
         ))}
       </ul>
     </div>
   );
 };
 
-export default WetherTimeBox;
+export default WeatherTimeBox;

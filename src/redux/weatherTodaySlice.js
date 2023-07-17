@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchWeatherToday } from "./operation";
 
-const initialContacts = { items: [], isLoading: false, error: null };
+const initialWeatherToday = { items: [], isLoading: false, error: null };
 
 const weatherToday = createSlice({
   name: "weatherToday",
-  initialState: initialContacts,
+  initialState: initialWeatherToday,
 
   extraReducers: {
     [fetchWeatherToday.pending](state) {

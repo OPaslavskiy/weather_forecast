@@ -2,11 +2,11 @@ import "./App.css";
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
 import AddTripButton from "./components/AddTripButton/AddTripButton";
-import CityWeatherCard from "./components/CityWetaherCard/CityWeatherCard";
 import InputSearch from "./components/InputSearch/InputSearch";
 import ModalAddTrip from "./components/Modal/ModalAddTrip";
-import WetherToday from "./components/WeatherToday/WeatherToday";
-import WetherTimeBox from "./components/WetherTimeBox/WetherTimeBox";
+import WeatherToday from "./components/WeatherToday/WeatherToday";
+import WeatherTimeBox from "./components/WeatherTimeBox/WeatherTimeBox";
+import TripBox from "./components/TripBox/TripBox";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
       <Layout>
         <GlobalStyle />
         <InputSearch />
-        <CityWeatherCard />
+        <TripBox />
         <AddTripButton />
-        <WetherTimeBox />
-        <WetherToday />
+        <WeatherTimeBox />
+        <WeatherToday />
         <ModalAddTrip />
       </Layout>
     </>

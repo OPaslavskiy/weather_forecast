@@ -4,6 +4,9 @@ import DatePicker from "react-datepicker";
 import { useState } from "react";
 import { addDays } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch } from "react-redux";
+import { addTrip } from "../../redux/tripsSlice";
+import { nanoid } from "nanoid";
 
 const tripSchema = object({
   city: string().required("City is a required field"),
@@ -20,15 +23,16 @@ const initialValues = {
 const cities = ["London", "Paris", "New York", "Tokyo"];
 
 const ModalAddTrip = () => {
+  const dispatch = useDispatch();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(`values=========>>>>>>>`, values);
+    dispatch(addTrip({ id: nanoid(), ...values }));
     resetForm();
     setStartDate(null);
     setEndDate(null);
-    onClose();
+    // onClose();
   };
   const handleCancel = (resetForm) => {
     resetForm();
@@ -69,7 +73,7 @@ const ModalAddTrip = () => {
                 selected={startDate}
                 onChange={(selectedDate) => {
                   setStartDate(selectedDate);
-                  setFieldValue("start", selectedDate);
+                  setFieldValue("start", selectedDate.toISOString());
                 }}
                 minDate={new Date()}
                 maxDate={addDays(new Date(), 15)}
@@ -91,7 +95,7 @@ const ModalAddTrip = () => {
                     return;
                   }
                   setEndDate(selectedDate);
-                  setFieldValue("end", selectedDate);
+                  setFieldValue("end", selectedDate.toISOString());
                 }}
                 minDate={startDate || new Date()}
                 maxDate={addDays(startDate, 15)}
