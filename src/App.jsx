@@ -4,6 +4,7 @@ import { Layout } from "./Layout";
 import AddTripButton from "./components/AddTripButton/AddTripButton";
 import CityWeatherCard from "./components/CityWetaherCard/CityWeatherCard";
 import InputSearch from "./components/InputSearch/InputSearch";
+import WetherToday from "./components/WeatherToday/WeatherToday";
 import WetherTimeBox from "./components/WetherTimeBox/WetherTimeBox";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <CityWeatherCard />
         <AddTripButton />
         <WetherTimeBox />
+        <WetherToday />
       </Layout>
     </>
   );

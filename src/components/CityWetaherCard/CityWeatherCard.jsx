@@ -7,6 +7,9 @@ const CityWeatherCard = () => {
 
   useEffect(() => {
     dispatch(fetchWeatherToday("london"));
+  }, [dispatch]);
+
+  useEffect(() => {
     dispatch(
       fetchWeatherTime({
         city: "london",

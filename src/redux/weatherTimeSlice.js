@@ -4,7 +4,7 @@ import { fetchWeatherTime } from "./operation";
 const initialContacts = { items: [], isLoading: false, error: null };
 
 const weatherTime = createSlice({
-  name: "weatherToday",
+  name: "weatherTime",
   initialState: initialContacts,
 
   extraReducers: {

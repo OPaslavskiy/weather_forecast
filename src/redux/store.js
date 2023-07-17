@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { weatherTodayReducer } from "./weatherToday";
-import { weatherTimeReducer } from "./weatherTime";
+import { weatherTodayReducer } from "./weatherTodaySlice";
+import { weatherTimeReducer } from "./weatherTimeSlice";
 // import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {

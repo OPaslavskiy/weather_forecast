@@ -8,7 +8,7 @@ axios.defaults.baseURL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 
 export const fetchWeatherToday = createAsyncThunk(
-  "weather/cityTodat",
+  "weather/cityToday",
   async (city, thunkAPI) => {
     try {
       const response = await axios.get(

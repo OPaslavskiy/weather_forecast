@@ -4,7 +4,7 @@ import WetherForDay from "../WetherForDay/WeatherForDay";
 const WetherTimeBox = () => {
   const selectWeather = (state) => state.weatherTime.items.days;
   const weatherForDays = useSelector(selectWeather);
-  console.log(`weather=====>>>>`, weatherForDays);
+  // console.log(`weather=====>>>>`, weatherForDays);
 
   return (
     <div>

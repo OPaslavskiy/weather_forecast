@@ -7,7 +7,7 @@ const InputSearch = () => {
       initialValues={{ searchQuery: "" }}
       onSubmit={(values) => {
         // Обробка події відправки форми
-        console.log(values.searchQuery);
+        // console.log(values.searchQuery);
       }}
     >
       <Form>
