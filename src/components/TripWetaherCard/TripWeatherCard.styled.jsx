@@ -34,6 +34,7 @@ export const CityName = styled.h2`
 export const CityImg = styled.img`
   width: 180px;
   height: 180px;
+  object-fit: cover;
 `;
 
 export const DatePeriod = styled.p`
