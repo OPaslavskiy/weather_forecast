@@ -12,6 +12,7 @@ import { addTrip } from "../../redux/tripsSlice";
 import { cities } from "../../cities";
 
 import "./modalAddTrip.css";
+
 import {
   Modal,
   Header,
