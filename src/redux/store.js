@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { weatherInCityReducer } from "./weatherInCityReducer";
+import { weatherTodayReducer } from "./weatherToday";
 import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {
@@ -30,7 +30,8 @@ const middleware = [
 
 export const store = configureStore({
   reducer: {
-    weatherInCity: weatherInCityReducer,
+    weatherToday: weatherTodayReducer,
+    // weatherTime:
     filter: filterReducer,
     // auth: persistReducer(authPersistConfig, authReducer),
   },
