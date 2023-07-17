@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { addTrip } from "../../redux/tripsSlice";
 import { nanoid } from "nanoid";
 import { cities } from "../../cities";
+import { AiOutlineCalendar } from "react-icons/ai";
 import {
   Modal,
   Header,
@@ -16,6 +17,12 @@ import {
   LebelStyled,
   FieldStyled,
   DatePickerStyled,
+  AiOutlineCalendarStyled,
+  BoxDatePicker,
+  BoxForButton,
+  BoxForInput,
+  CancelBtn,
+  SaveBtn,
 } from "./ModalAddTrip.styled";
 
 const tripSchema = object({
@@ -58,71 +65,75 @@ const ModalAddTrip = () => {
       >
         {({ setFieldValue, resetForm }) => (
           <FormStyled>
-            <LebelStyled htmlFor="city">
-              <SpanForLabel>*</SpanForLabel>
-              City
-            </LebelStyled>
-            <FieldStyled as="select" id="city" name="city">
-              <option value="">Select a city</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </FieldStyled>
-            <ErrorMessage name="city" component="p" />
+            <BoxForInput>
+              <LebelStyled htmlFor="city">
+                <SpanForLabel>*</SpanForLabel>
+                City
+              </LebelStyled>
+              <FieldStyled as="select" id="city" name="city">
+                <option value="">Select a city</option>
+                {cities.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </FieldStyled>
+              <ErrorMessage name="city" component="p" />
 
-            <LebelStyled htmlFor="start">
-              <SpanForLabel>*</SpanForLabel>
-              Start date
-            </LebelStyled>
-            <div>
-              <DatePickerStyled
-                selected={startDate}
-                onChange={(selectedDate) => {
-                  setStartDate(selectedDate);
-                  setFieldValue("start", selectedDate.toISOString());
-                }}
-                minDate={new Date()}
-                maxDate={addDays(new Date(), 15)}
-                calendarStartDay={1}
-                placeholderText="Select date"
-              />
-            </div>
+              <LebelStyled htmlFor="start">
+                <SpanForLabel>*</SpanForLabel>
+                Start date
+              </LebelStyled>
+              <BoxDatePicker>
+                <DatePickerStyled
+                  selected={startDate}
+                  onChange={(selectedDate) => {
+                    setStartDate(selectedDate);
+                    setFieldValue("start", selectedDate.toISOString());
+                  }}
+                  minDate={new Date()}
+                  maxDate={addDays(new Date(), 15)}
+                  calendarStartDay={1}
+                  placeholderText="Select date"
+                />
+                <AiOutlineCalendarStyled />
+              </BoxDatePicker>
 
-            <LebelStyled htmlFor="end">
-              <SpanForLabel>*</SpanForLabel>
-              End date
-            </LebelStyled>
-            <div>
-              <DatePickerStyled
-                selected={endDate}
-                onChange={(selectedDate) => {
-                  if (!startDate) {
-                    alert("Please select a start date first");
-                    return;
-                  }
-                  setEndDate(selectedDate);
-                  setFieldValue("end", selectedDate.toISOString());
-                }}
-                minDate={startDate || new Date()}
-                maxDate={addDays(startDate, 15)}
-                calendarStartDay={1}
-                placeholderText="Select date"
-              />
-            </div>
+              <LebelStyled htmlFor="end">
+                <SpanForLabel>*</SpanForLabel>
+                End date
+              </LebelStyled>
+              <BoxDatePicker>
+                <DatePickerStyled
+                  selected={endDate}
+                  onChange={(selectedDate) => {
+                    if (!startDate) {
+                      alert("Please select a start date first");
+                      return;
+                    }
+                    setEndDate(selectedDate);
+                    setFieldValue("end", selectedDate.toISOString());
+                  }}
+                  minDate={startDate || new Date()}
+                  maxDate={addDays(startDate, 15)}
+                  calendarStartDay={1}
+                  placeholderText="Select date"
+                />
+                <AiOutlineCalendarStyled />
+              </BoxDatePicker>
+            </BoxForInput>
 
-            <div>
-              <button
+            <BoxForButton>
+              <CancelBtn
                 type="button"
                 onClick={() => {
                   handleCancel(resetForm);
                 }}
               >
                 Cancel
-              </button>
-              <button type="submit">Save</button>
-            </div>
+              </CancelBtn>
+              <SaveBtn type="submit">Save</SaveBtn>
+            </BoxForButton>
           </FormStyled>
         )}
       </Formik>
