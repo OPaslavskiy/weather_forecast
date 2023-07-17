@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Field, Form, Formik, ErrorMessage } from "formik";
+import { Form, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -18,7 +18,7 @@ export const Header = styled.p`
 
 export const AiOutlineCloseStyle = styled(AiOutlineClose)`
   cursor: pointer;
-  transition: color 0.4s ease;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
@@ -41,7 +41,6 @@ export const FormStyled = styled(Form)`
   flex-direction: column;
   font-size: 15px;
   font-weight: 600;
-  /* padding: 60px 15px 15px; */
   border-bottom: 1px solid grey;
 `;
 
@@ -66,6 +65,13 @@ export const DatePickerStyled = styled(DatePicker)`
   font-weight: 400;
   width: 560px;
   cursor: pointer;
+
+  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border-color: #3ab2f7;
+  }
 `;
 
 export const BoxDatePicker = styled.div`
@@ -103,7 +109,7 @@ export const CancelBtn = styled.button`
   background-color: #fff;
   border-radius: 3px;
   font-weight: 600;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
@@ -122,7 +128,7 @@ export const SaveBtn = styled.button`
   border-radius: 3px;
   font-weight: 600;
 
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {

@@ -8,4 +8,10 @@
   color: #b3b0b0;
   font-weight: 400;
   cursor: pointer;
+  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-city:hover,
+.input-city:focus {
+  border-color: #3ab2f7;
 }

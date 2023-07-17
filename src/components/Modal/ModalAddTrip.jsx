@@ -1,14 +1,17 @@
 import { Formik, Field } from "formik";
 import { date, object, string } from "yup";
-
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { nanoid } from "nanoid";
+
 import { addDays } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
-import { useDispatch } from "react-redux";
+
 import { addTrip } from "../../redux/tripsSlice";
-import { nanoid } from "nanoid";
 import { cities } from "../../cities";
 
+import "./modalAddTrip.css";
 import {
   Modal,
   Header,
@@ -26,8 +29,6 @@ import {
   StyleErrorMessage,
   AiOutlineCloseStyle,
 } from "./ModalAddTrip.styled";
-
-import "./modalAddTrip.css";
 
 const tripSchema = object({
   city: string().required("City is a required field"),

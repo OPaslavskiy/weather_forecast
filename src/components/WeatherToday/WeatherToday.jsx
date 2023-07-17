@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { getDayName } from "../../services/getDayName";
+import { getDayName } from "../../services";
 
 const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items.days;

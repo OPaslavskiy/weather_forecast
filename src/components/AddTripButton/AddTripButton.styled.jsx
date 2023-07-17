@@ -13,7 +13,7 @@ export const AddTripBtn = styled.button`
   border: none;
   font-size: 13px;
   cursor: pointer;
-  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {

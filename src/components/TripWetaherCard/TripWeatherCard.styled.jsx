@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BoxForTrip = styled.div`
   padding: 15px;
   border: 1px solid #a7a7a7;
-  transition: border-color 0.5s ease;
+  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const ItemTrip = styled.li`
@@ -14,7 +14,7 @@ export const ItemTrip = styled.li`
 
   border-radius: 1px;
   cursor: pointer;
-  transition: box-shadow 0.4s ease;
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {

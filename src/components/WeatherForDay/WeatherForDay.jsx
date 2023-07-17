@@ -1,4 +1,4 @@
-import { getDayName } from "../../services/getDayName";
+import { getDayName } from "../../services";
 
 // eslint-disable-next-line react/prop-types
 const WeatherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
