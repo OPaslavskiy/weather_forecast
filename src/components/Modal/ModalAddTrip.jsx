@@ -23,6 +23,7 @@ import {
   BoxForInput,
   CancelBtn,
   SaveBtn,
+  StyleErrorMessage,
 } from "./ModalAddTrip.styled";
 
 const tripSchema = object({
@@ -78,7 +79,7 @@ const ModalAddTrip = () => {
                   </option>
                 ))}
               </FieldStyled>
-              <ErrorMessage name="city" component="p" />
+              <StyleErrorMessage name="city" component="p" />
 
               <LebelStyled htmlFor="start">
                 <SpanForLabel>*</SpanForLabel>
@@ -97,6 +98,7 @@ const ModalAddTrip = () => {
                   placeholderText="Select date"
                 />
                 <AiOutlineCalendarStyled />
+                <StyleErrorMessage name="start" component="div" />
               </BoxDatePicker>
 
               <LebelStyled htmlFor="end">
@@ -120,6 +122,7 @@ const ModalAddTrip = () => {
                   placeholderText="Select date"
                 />
                 <AiOutlineCalendarStyled />
+                <StyleErrorMessage name="end" component="div" />
               </BoxDatePicker>
             </BoxForInput>
 

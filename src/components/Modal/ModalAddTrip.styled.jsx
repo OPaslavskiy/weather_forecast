@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import { AiOutlineCalendar } from "react-icons/ai";
 
@@ -110,4 +110,12 @@ export const SaveBtn = styled.button`
   color: #fff;
   border-radius: 3px;
   font-weight: 600;
+`;
+
+export const StyleErrorMessage = styled(ErrorMessage)`
+  color: red;
+  margin-top: 1px;
+  margin-left: 5px;
+  font-size: 10px;
+  margin-bottom: 10px;
 `;
