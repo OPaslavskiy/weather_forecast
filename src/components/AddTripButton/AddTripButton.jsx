@@ -1,11 +1,11 @@
-import { BiPlus } from "react-icons/bi";
+import { AddTripBtn, Plus } from "./AddTripButton.styled";
 
 const AddTripButton = () => {
   return (
-    <button type="button">
-      <BiPlus />
+    <AddTripBtn type="button">
+      <Plus />
       Add trip
-    </button>
+    </AddTripBtn>
   );
 };
 

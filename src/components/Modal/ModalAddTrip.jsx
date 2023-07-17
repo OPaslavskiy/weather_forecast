@@ -7,6 +7,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import { addTrip } from "../../redux/tripsSlice";
 import { nanoid } from "nanoid";
+import { cities } from "../../cities";
+import {
+  Modal,
+  Header,
+  FormStyled,
+  SpanForLabel,
+  LebelStyled,
+  FieldStyled,
+  DatePickerStyled,
+} from "./ModalAddTrip.styled";
 
 const tripSchema = object({
   city: string().required("City is a required field"),
@@ -19,8 +29,6 @@ const initialValues = {
   start: null,
   end: null,
 };
-
-const cities = ["London", "Paris", "New York", "Tokyo"];
 
 const ModalAddTrip = () => {
   const dispatch = useDispatch();
@@ -41,35 +49,35 @@ const ModalAddTrip = () => {
   };
 
   return (
-    <div>
-      <p>Create Trip</p>
+    <Modal>
+      <Header>Create Trip</Header>
       <Formik
         validationSchema={tripSchema}
         onSubmit={handleSubmit}
         initialValues={initialValues}
       >
         {({ setFieldValue, resetForm }) => (
-          <Form>
-            <label htmlFor="city">
-              <span>*</span>
+          <FormStyled>
+            <LebelStyled htmlFor="city">
+              <SpanForLabel>*</SpanForLabel>
               City
-            </label>
-            <Field as="select" id="city" name="city">
+            </LebelStyled>
+            <FieldStyled as="select" id="city" name="city">
               <option value="">Select a city</option>
               {cities.map((city) => (
                 <option key={city} value={city}>
                   {city}
                 </option>
               ))}
-            </Field>
+            </FieldStyled>
             <ErrorMessage name="city" component="p" />
 
-            <label htmlFor="start">
-              <span>*</span>
+            <LebelStyled htmlFor="start">
+              <SpanForLabel>*</SpanForLabel>
               Start date
-            </label>
+            </LebelStyled>
             <div>
-              <DatePicker
+              <DatePickerStyled
                 selected={startDate}
                 onChange={(selectedDate) => {
                   setStartDate(selectedDate);
@@ -82,12 +90,12 @@ const ModalAddTrip = () => {
               />
             </div>
 
-            <label htmlFor="end">
-              <span>*</span>
+            <LebelStyled htmlFor="end">
+              <SpanForLabel>*</SpanForLabel>
               End date
-            </label>
+            </LebelStyled>
             <div>
-              <DatePicker
+              <DatePickerStyled
                 selected={endDate}
                 onChange={(selectedDate) => {
                   if (!startDate) {
@@ -115,10 +123,10 @@ const ModalAddTrip = () => {
               </button>
               <button type="submit">Save</button>
             </div>
-          </Form>
+          </FormStyled>
         )}
       </Formik>
-    </div>
+    </Modal>
   );
 };
 

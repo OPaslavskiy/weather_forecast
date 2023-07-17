@@ -1,24 +1,28 @@
-import { Formik, Field, Form } from "formik";
-import { RiSearchLine } from "react-icons/ri";
+import { Formik } from "formik";
+import {
+  FieldFormik,
+  FormFormik,
+  RiSearchLineStyled,
+} from "./InputSearch.styled";
 
 const InputSearch = () => {
   return (
     <Formik
       initialValues={{ searchQuery: "" }}
-      onSubmit={(values) => {
+      onSubmit={() => {
         // Обробка події відправки форми
         // console.log(values.searchQuery);
       }}
     >
-      <Form>
-        <RiSearchLine />
-        <Field
+      <FormFormik>
+        <RiSearchLineStyled />
+        <FieldFormik
           type="text"
           name="searchQuery"
           placeholder="Search your trip"
           className="search-input"
         />
-      </Form>
+      </FormFormik>
     </Formik>
   );
 };

@@ -1,19 +1,17 @@
 import { useSelector } from "react-redux";
-
-import CityWeatherCard from "../CityWetaherCard/CityWeatherCard";
+import TripWeatherCard from "../TripWetaherCard/TripWeatherCard";
+import { TripList } from "./TripBox.styled";
 
 const TripBox = () => {
   const selectTrips = (state) => state.trips;
   const trips = useSelector(selectTrips);
 
   return (
-    <div>
-      <ul>
-        {trips?.map((trip) => (
-          <CityWeatherCard key={trip.id} props={trip} firstTrip={trips[0]} />
-        ))}
-      </ul>
-    </div>
+    <TripList>
+      {trips?.map((trip) => (
+        <TripWeatherCard key={trip.id} props={trip} firstTrip={trips[0]} />
+      ))}
+    </TripList>
   );
 };
 

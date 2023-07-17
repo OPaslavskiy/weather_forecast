@@ -1,9 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
+import {
+  CityImg,
+  CityName,
+  DatePeriod,
+  ItemTrip,
+  BoxForTrip,
+} from "./TripWeatherCard.styled";
 
 // eslint-disable-next-line react/prop-types
-const CityWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
+const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
   const dispatch = useDispatch();
 
   function formatedDateForRequest(date) {
@@ -50,7 +57,7 @@ const CityWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
     );
   };
   return (
-    <li
+    <ItemTrip
       onClick={() =>
         handlerSubmit(
           city,
@@ -59,13 +66,15 @@ const CityWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
         )
       }
     >
-      <img src="" alt="" />
-      <p>{city}</p>
-      <p>
-        {formatedDateForPage(start)} - {formatedDateForPage(end)}
-      </p>
-    </li>
+      <CityImg src="" alt={city} />
+      <BoxForTrip>
+        <CityName>{city}</CityName>
+        <DatePeriod>
+          {formatedDateForPage(start)} - {formatedDateForPage(end)}
+        </DatePeriod>
+      </BoxForTrip>
+    </ItemTrip>
   );
 };
 
-export default CityWeatherCard;
+export default TripWeatherCard;
