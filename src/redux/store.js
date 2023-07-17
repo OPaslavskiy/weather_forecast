@@ -1,6 +1,7 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { weatherTodayReducer } from "./weatherToday";
-import { filterReducer } from "./filterSlice";
+import { weatherTimeReducer } from "./weatherTime";
+// import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {
   persistStore,
@@ -12,6 +13,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+
 // import storage from 'redux-persist/lib/storage';
 
 const middleware = [
@@ -31,8 +33,8 @@ const middleware = [
 export const store = configureStore({
   reducer: {
     weatherToday: weatherTodayReducer,
-    // weatherTime:
-    filter: filterReducer,
+    weatherTime: weatherTimeReducer,
+    // filter: filterReducer,
     // auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware,

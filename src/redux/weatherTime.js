@@ -1,26 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchWeatherToday } from "./operation";
+import { fetchWeatherTime } from "./operation";
 
 const initialContacts = { items: [], isLoading: false, error: null };
 
-const weatherToday = createSlice({
+const weatherTime = createSlice({
   name: "weatherToday",
   initialState: initialContacts,
 
   extraReducers: {
-    [fetchWeatherToday.pending](state) {
+    [fetchWeatherTime.pending](state) {
       state.isLoading = true;
     },
-    [fetchWeatherToday.fulfilled](state, action) {
+    [fetchWeatherTime.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
       state.items = action.payload;
     },
-    [fetchWeatherToday.rejected](state, action) {
+    [fetchWeatherTime.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },
   },
 });
 
-export const weatherTodayReducer = weatherToday.reducer;
+export const weatherTimeReducer = weatherTime.reducer;

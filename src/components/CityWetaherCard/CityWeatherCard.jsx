@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
 
 const CityWeatherCard = () => {
@@ -16,9 +16,6 @@ const CityWeatherCard = () => {
     );
   }, [dispatch]);
 
-  const selectWeather = (state) => state.weatherToday.items;
-  const weater = useSelector(selectWeather);
-  console.log(weater);
   return (
     <div>
       <img src="" alt="" />
