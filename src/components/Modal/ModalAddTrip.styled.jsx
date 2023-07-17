@@ -15,6 +15,14 @@ export const Modal = styled.div`
 export const Header = styled.p`
   font-size: 15px;
   font-weight: 600;
+`;
+
+export const DivForTitelBtn = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
   padding: 20px;
   border-bottom: 1px solid #ebe8e8;
 `;

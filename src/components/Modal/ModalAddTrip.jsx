@@ -1,6 +1,7 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field } from "formik";
 import { date, object, string } from "yup";
-import DatePicker from "react-datepicker";
+import { AiOutlineClose } from "react-icons/ai";
+
 import { useState } from "react";
 import { addDays } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,10 +9,11 @@ import { useDispatch } from "react-redux";
 import { addTrip } from "../../redux/tripsSlice";
 import { nanoid } from "nanoid";
 import { cities } from "../../cities";
-import { AiOutlineCalendar } from "react-icons/ai";
+
 import {
   Modal,
   Header,
+  DivForTitelBtn,
   FormStyled,
   SpanForLabel,
   LebelStyled,
@@ -59,7 +61,10 @@ const ModalAddTrip = () => {
 
   return (
     <Modal>
-      <Header>Create Trip</Header>
+      <DivForTitelBtn>
+        <Header>Create Trip</Header>
+        <AiOutlineClose />
+      </DivForTitelBtn>
       <Formik
         validationSchema={tripSchema}
         onSubmit={handleSubmit}
