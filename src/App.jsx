@@ -1,12 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { GlobalStyle } from "./GlobalStyle";
+import { Layout } from "./Layout";
+import AddTripButton from "./components/AddTripButton/AddTripButton";
+import CityWeatherCard from "./components/CityWetaherCard/CityWeatherCard";
+import InputSearch from "./components/InputSearch/InputSearch";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div>123</div>;
+  return (
+    <>
+      <Layout>
+        <GlobalStyle />
+        <InputSearch />
+        <CityWeatherCard />
+        <AddTripButton />
+      </Layout>
+    </>
+  );
 }
 
 export default App;
