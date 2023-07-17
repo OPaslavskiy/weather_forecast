@@ -1,6 +1,5 @@
 import { Formik, Field } from "formik";
 import { date, object, string } from "yup";
-import { AiOutlineClose } from "react-icons/ai";
 
 import { useState } from "react";
 import { addDays } from "date-fns";
@@ -25,6 +24,7 @@ import {
   CancelBtn,
   SaveBtn,
   StyleErrorMessage,
+  AiOutlineCloseStyle,
 } from "./ModalAddTrip.styled";
 
 import "./modalAddTrip.css";
@@ -41,6 +41,7 @@ const initialValues = {
   end: null,
 };
 
+// eslint-disable-next-line react/prop-types
 const ModalAddTrip = ({ onClose }) => {
   const dispatch = useDispatch();
   const [startDate, setStartDate] = useState(null);
@@ -51,7 +52,7 @@ const ModalAddTrip = ({ onClose }) => {
     resetForm();
     setStartDate(null);
     setEndDate(null);
-    // onClose();
+    onClose();
   };
   const handleCancel = (resetForm) => {
     resetForm();
@@ -63,7 +64,7 @@ const ModalAddTrip = ({ onClose }) => {
     <Modal>
       <DivForTitelBtn>
         <Header>Create Trip</Header>
-        <AiOutlineClose />
+        <AiOutlineCloseStyle onClick={onClose} />
       </DivForTitelBtn>
       <Formik
         validationSchema={tripSchema}
@@ -80,8 +81,8 @@ const ModalAddTrip = ({ onClose }) => {
               <Field as="select" id="city" name="city" className="input-city">
                 <option value="">Select a city</option>
                 {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
+                  <option key={city.id} value={city.city}>
+                    {city.city}
                   </option>
                 ))}
               </Field>

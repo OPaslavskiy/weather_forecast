@@ -5,7 +5,7 @@ import { BackdropContainer } from "./ModalPortal.styled";
 
 const modalRoot = document.querySelector("#modal-root");
 
-const Modal = ({ onClose, onSubmit }) => {
+const ModalPortal = ({ onClose }) => {
   useEffect(() => {
     const handleKeydown = (e) => {
       if (e.code === "Escape") {
@@ -16,7 +16,7 @@ const Modal = ({ onClose, onSubmit }) => {
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     };
-  }, [onClose]);
+  }, []);
 
   const handleBackdropClick = (e) => {
     if (e.currentTarget === e.target) {
@@ -25,10 +25,10 @@ const Modal = ({ onClose, onSubmit }) => {
   };
   return createPortal(
     <BackdropContainer onClick={handleBackdropClick || onClose()}>
-      <ModalAddTrip onClose={onClose} onSubmit={onSubmit} />
+      <ModalAddTrip onClose={onClose} />
     </BackdropContainer>,
     modalRoot
   );
 };
 
-export default Modal;
+export default ModalPortal;

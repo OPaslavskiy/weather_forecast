@@ -2,19 +2,28 @@ import styled from "styled-components";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 
 export const Modal = styled.div`
-  /* padding: 15px; */
   width: 600px;
 
-  border: 1px solid red;
-
+  background-color: #fff;
   border-radius: 1px;
 `;
 
 export const Header = styled.p`
   font-size: 15px;
   font-weight: 600;
+`;
+
+export const AiOutlineCloseStyle = styled(AiOutlineClose)`
+  cursor: pointer;
+  transition: color 0.4s ease;
+
+  &:hover,
+  &:focus {
+    color: #3ab2f7;
+  }
 `;
 
 export const DivForTitelBtn = styled.div`
@@ -94,6 +103,12 @@ export const CancelBtn = styled.button`
   background-color: #fff;
   border-radius: 3px;
   font-weight: 600;
+  transition: background-color 0.4s ease;
+
+  &:hover,
+  &:focus {
+    background-color: #cfcfcf;
+  }
 `;
 
 export const SaveBtn = styled.button`
@@ -106,6 +121,13 @@ export const SaveBtn = styled.button`
   color: #fff;
   border-radius: 3px;
   font-weight: 600;
+
+  transition: background-color 0.4s ease;
+
+  &:hover,
+  &:focus {
+    background-color: #0ca4fc;
+  }
 `;
 
 export const StyleErrorMessage = styled(ErrorMessage)`
