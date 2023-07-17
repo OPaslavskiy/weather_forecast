@@ -41,7 +41,7 @@ const initialValues = {
   end: null,
 };
 
-const ModalAddTrip = () => {
+const ModalAddTrip = ({ onClose }) => {
   const dispatch = useDispatch();
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);

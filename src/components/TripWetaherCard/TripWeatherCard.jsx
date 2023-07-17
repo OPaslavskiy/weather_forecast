@@ -8,6 +8,7 @@ import {
   ItemTrip,
   BoxForTrip,
 } from "./TripWeatherCard.styled";
+import { cities } from "../../cities";
 
 // eslint-disable-next-line react/prop-types
 const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
@@ -66,7 +67,11 @@ const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
         )
       }
     >
-      <CityImg src="" alt={city} />
+      <CityImg
+        src={cities.find((image) => image.city === city)?.path}
+        alt={city}
+      />
+
       <BoxForTrip>
         <CityName>{city}</CityName>
         <DatePeriod>
