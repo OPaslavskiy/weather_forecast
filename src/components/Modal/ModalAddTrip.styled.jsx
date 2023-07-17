@@ -38,18 +38,6 @@ export const LebelStyled = styled.label`
   margin-bottom: 8px;
 `;
 
-export const FieldStyled = styled(Field)`
-  font-size: 15px;
-  padding: 8px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  border: 1px solid #ebe8e8;
-  border-radius: 1px;
-  color: #b3b0b0;
-  font-weight: 400;
-  cursor: pointer;
-`;
-
 export const DatePickerStyled = styled(DatePicker)`
   font-size: 15px;
   padding: 8px;

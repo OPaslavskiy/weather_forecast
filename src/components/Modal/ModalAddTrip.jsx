@@ -26,6 +26,8 @@ import {
   StyleErrorMessage,
 } from "./ModalAddTrip.styled";
 
+import "./modalAddTrip.css";
+
 const tripSchema = object({
   city: string().required("City is a required field"),
   start: date().nullable().required("Start date is required"),
@@ -71,14 +73,14 @@ const ModalAddTrip = () => {
                 <SpanForLabel>*</SpanForLabel>
                 City
               </LebelStyled>
-              <FieldStyled as="select" id="city" name="city">
+              <Field as="select" id="city" name="city" className="input-city">
                 <option value="">Select a city</option>
                 {cities.map((city) => (
                   <option key={city} value={city}>
                     {city}
                   </option>
                 ))}
-              </FieldStyled>
+              </Field>
               <StyleErrorMessage name="city" component="p" />
 
               <LebelStyled htmlFor="start">
