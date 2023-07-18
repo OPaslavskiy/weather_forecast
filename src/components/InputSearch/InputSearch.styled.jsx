@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Field, Form } from "formik";
 import { RiSearchLine } from "react-icons/ri";
 
-export const FieldFormik = styled(Field)`
+export const FieldFormik = styled.input`
   padding: 15px 10px 15px 40px;
   width: 220px;
   font-size: 12px;
@@ -16,7 +15,7 @@ export const FieldFormik = styled(Field)`
   }
 `;
 
-export const FormFormik = styled(Form)`
+export const FormFormik = styled.div`
   position: relative;
 `;
 

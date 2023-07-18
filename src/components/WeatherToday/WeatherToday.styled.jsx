@@ -35,8 +35,7 @@ export const Celsii = styled.span`
   font-size: 20px;
   font-weight: 400;
   position: absolute;
-
-  left: 60px;
+  left: 70px;
 `;
 
 export const Degrees = styled.span`

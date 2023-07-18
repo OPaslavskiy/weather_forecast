@@ -1,4 +1,6 @@
-import { Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { setFilter } from "../../redux/filterSlice";
+
 import {
   FieldFormik,
   FormFormik,
@@ -6,24 +8,18 @@ import {
 } from "./InputSearch.styled";
 
 const InputSearch = () => {
+  const dispatch = useDispatch();
   return (
-    <Formik
-      initialValues={{ searchQuery: "" }}
-      onSubmit={() => {
-        // Обробка події відправки форми
-        // console.log(values.searchQuery);
-      }}
-    >
-      <FormFormik>
-        <RiSearchLineStyled />
-        <FieldFormik
-          type="text"
-          name="searchQuery"
-          placeholder="Search your trip"
-          className="search-input"
-        />
-      </FormFormik>
-    </Formik>
+    <FormFormik>
+      <RiSearchLineStyled />
+      <FieldFormik
+        type="text"
+        name="searchQuery"
+        placeholder="Search your trip"
+        className="search-input"
+        onChange={(event) => dispatch(setFilter(event.currentTarget.value))}
+      />
+    </FormFormik>
   );
 };
 

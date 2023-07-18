@@ -11,12 +11,12 @@ import {
   WeatherBox,
 } from "./WeatherToday.styled";
 import { icons } from "../../iconForWeather/index";
+import { nanoid } from "nanoid";
 
 const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items;
   let weatherToday = useSelector(selectWeatherToday).days;
   const city = useSelector(selectWeatherToday).address;
-  console.log(weatherToday);
 
   if (weatherToday) {
     weatherToday = weatherToday[0];
@@ -28,7 +28,14 @@ const WeatherToday = () => {
       <WeatherBox>
         {icons.map((icon) => {
           if (icon.icon === weatherToday?.icon)
-            return <img src={icon.path} alt={weatherToday?.icon} width={110} />;
+            return (
+              <img
+                key={nanoid()}
+                src={icon.path}
+                alt={weatherToday?.icon}
+                width={110}
+              />
+            );
         })}
       </WeatherBox>
       <Temp>

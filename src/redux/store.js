@@ -2,7 +2,7 @@ import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { weatherTodayReducer } from "./weatherTodaySlice";
 import { weatherTimeReducer } from "./weatherTimeSlice";
 
-// import { filterReducer } from "./filterSlice";
+import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {
   persistStore,
@@ -37,7 +37,7 @@ export const store = configureStore({
     weatherToday: weatherTodayReducer,
     weatherTime: weatherTimeReducer,
     trips: tripsReducer,
-    // filter: filterReducer,
+    filter: filterReducer,
     // auth: persistReducer(authPersistConfig, authReducer),
   },
   middleware,
