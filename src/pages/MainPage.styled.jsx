@@ -4,7 +4,6 @@ import { background } from "../image";
 export const BoxForListAndBtn = styled.div`
   display: flex;
   margin-top: 40px;
-  gap: 40px;
 `;
 
 export const Header = styled.h1`
@@ -26,7 +25,7 @@ export const InformBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 35vw;
+  width: 30vw;
   height: 100vh;
   background-image: url(${background});
   background-size: cover; /* Змінюємо розмір фонового зображення, щоб воно покрило весь фон */
@@ -36,6 +35,6 @@ export const InformBox = styled.div`
 `;
 
 export const BoxForecast = styled.div`
-  width: 65vw;
+  width: 70vw;
   padding: 30px;
 `;
