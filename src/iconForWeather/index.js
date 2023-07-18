@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import clearDay from "./clear-day.svg";
 import clearNight from "./clear-night.svg";
 import cloudy from "./cloudy.svg";
@@ -21,31 +22,144 @@ import thunderShowersNight from "./thunder-showers-night.svg";
 import thunder from "./thunder.svg";
 import wind from "./wind.svg";
 
-export {
-  clearDay,
-  clearNight,
-  cloudy,
-  fog,
-  hail,
-  partlyCloudyDay,
-  partlyCloudyNight,
-  rainSnowShowersDay,
-  rainSnowShowersNight,
-  rainSnow,
-  rain,
-  showersDay,
-  showersNight,
-  sleet,
-  snowShowersDay,
-  snowShowersNight,
-  snow,
-  thunderRain,
-  thunderShowersDay,
-  thunderShowersNight,
-  thunder,
-  wind,
-};
+// export {
+//   clearDay,
+//   clearNight,
+//   cloudy,
+//   fog,
+//   hail,
+//   partlyCloudyDay,
+//   partlyCloudyNight,
+//   rainSnowShowersDay,
+//   rainSnowShowersNight,
+//   rainSnow,
+//   rain,
+//   showersDay,
+//   showersNight,
+//   sleet,
+//   snowShowersDay,
+//   snowShowersNight,
+//   snow,
+//   thunderRain,
+//   thunderShowersDay,
+//   thunderShowersNight,
+//   thunder,
+//   wind,
+// };
 
 // clear-day, clear-night, cloudy, fog, hail, partly-cloudy-day, partly-cloudy-night, rain-snow-showers-day,
 // rain-snow-showers-night, rain-snow, rain, showers-day, showers-night, sleet, snow-showers-day, snow-showers-night,
 // snow, thunder-rain, thunder-showers-day, thunder-showers-night, thunder, wind
+
+export const icons = [
+  {
+    id: nanoid(),
+    icon: "clear-day",
+    path: clearDay,
+  },
+  {
+    iid: nanoid(),
+    icon: "clear-night",
+    path: clearNight,
+  },
+  {
+    id: nanoid(),
+    icon: "cloudy",
+    path: cloudy,
+  },
+  {
+    id: nanoid(),
+    icon: "fog",
+    path: fog,
+  },
+  {
+    id: nanoid(),
+    icon: "hail",
+    path: hail,
+  },
+  {
+    id: nanoid(),
+    icon: "partly-cloudy-day",
+    path: partlyCloudyDay,
+  },
+  {
+    id: nanoid(),
+    icon: "partly-cloudy-night",
+    path: partlyCloudyNight,
+  },
+  {
+    id: nanoid(),
+    icon: "rain-snow-showers-day",
+    path: rainSnowShowersDay,
+  },
+  {
+    id: nanoid(),
+    icon: "rain-snow-showers-night",
+    path: rainSnowShowersNight,
+  },
+  {
+    id: nanoid(),
+    icon: "rain-snow",
+    path: rainSnow,
+  },
+  {
+    id: nanoid(),
+    icon: "rain",
+    path: rain,
+  },
+  {
+    id: nanoid(),
+    icon: "showers-day",
+    path: showersDay,
+  },
+  {
+    id: nanoid(),
+    icon: "showers-night",
+    path: showersNight,
+  },
+  {
+    id: nanoid(),
+    icon: "sleet",
+    path: sleet,
+  },
+  {
+    id: nanoid(),
+    icon: "snow-showers-day",
+    path: snowShowersDay,
+  },
+  {
+    id: nanoid(),
+    icon: "snow-showers-night",
+    path: snowShowersNight,
+  },
+  {
+    id: nanoid(),
+    icon: "snow",
+    path: snow,
+  },
+  {
+    id: nanoid(),
+    icon: "thunder-rain",
+    path: thunderRain,
+  },
+  {
+    id: nanoid(),
+    icon: "thunder-showers-day",
+    path: thunderShowersDay,
+  },
+  {
+    id: nanoid(),
+    icon: "thunder-showers-night",
+    path: thunderShowersNight,
+  },
+  {
+    id: nanoid(),
+    icon: "thunder",
+    path: thunder,
+  },
+  {
+    id: nanoid(),
+    icon: "wind",
+    path: wind,
+  },
+];

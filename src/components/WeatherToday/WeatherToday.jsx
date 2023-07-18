@@ -9,6 +9,7 @@ import {
   Celsii,
   Degrees,
 } from "./WeatherToday.styled";
+import { icons } from "../../iconForWeather/index";
 
 const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items;
@@ -20,12 +21,13 @@ const WeatherToday = () => {
     weatherToday = weatherToday[0];
   }
 
-
   return (
     <Box>
       <DayOfWeek>{getDayName(weatherToday?.datetime)}</DayOfWeek>
-
-      <img src={} alt="" />
+      {icons.map((icon) => {
+        if (icon.icon === weatherToday?.icon)
+          return <img src={icon.path} alt={weatherToday?.icon} />;
+      })}
 
       <Temp>
         {Math.floor(weatherToday?.temp)}
