@@ -12,6 +12,7 @@ import { cities } from "../../cities";
 import { formatedDateForRequest } from "../../services";
 import { formatedDateForPage } from "../../services";
 import { deleteTrip } from "../../redux/tripsSlice";
+import { setDate } from "../../redux/startDateSlice";
 
 // eslint-disable-next-line react/prop-types
 const TripWeatherCard = ({ props: { city, start, end, id } }) => {
@@ -30,6 +31,7 @@ const TripWeatherCard = ({ props: { city, start, end, id } }) => {
         endDate: endDateFormatedForPage,
       })
     );
+    dispatch(setDate(start));
   };
 
   const deleteCard = (id) => {

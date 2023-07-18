@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { TimerBox, TimeBox, Value, Indicator } from "./Timer.styled";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Timer = () => {
+  const startDate = useSelector((state) => state);
+
   const calculateTimeLeft = () => {
-    // const selectWeatherToday = (state) => state.weatherTime;
-    // let weatherToday = useSelector(selectWeatherToday);
-
-    // console.log(`!!!!!!!!!!!!!!!!!!!!!`, weatherToday);
-
-    const difference = new Date("2023-07-20") - new Date();
+    const difference = new Date(startDate.startDate) - new Date();
     if (difference < 0) {
       return {
         days: 0,
@@ -42,7 +39,7 @@ const Timer = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [startDate.startDate]);
 
   return (
     <TimerBox>

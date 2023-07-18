@@ -19,11 +19,13 @@ import { tripsReducer } from "./tripsSlice";
 import storage from "redux-persist/lib/storage";
 
 import { combineReducers } from "@reduxjs/toolkit";
+import { startDateReducer } from "./startDateSlice";
 export const rootReducer = combineReducers({
   weatherToday: weatherTodayReducer,
   weatherTime: weatherTimeReducer,
   trips: tripsReducer,
   filter: filterReducer,
+  startDate: startDateReducer,
 });
 
 const persistConfig = {
