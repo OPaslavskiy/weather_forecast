@@ -1,3 +1,4 @@
+import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import styled from "styled-components";
 
 export const TripList = styled.ul`
@@ -20,5 +21,27 @@ export const TripList = styled.ul`
 
   &::-webkit-scrollbar-thumb:hover {
     background-color: #919191;
+  }
+`;
+export const AiFillCaretLeftStyle = styled(AiFillCaretLeft)`
+  font-size: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #a7a7a7;
+  z-index: 100;
+  margin-top: 80px;
+  &:hover {
+    color: #3ab2f7;
+  }
+`;
+
+export const AiFillCaretRightStyle = styled(AiFillCaretRight)`
+  font-size: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #a7a7a7;
+  margin-top: 80px;
+  &:hover {
+    color: #3ab2f7;
   }
 `;

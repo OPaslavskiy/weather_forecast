@@ -1,15 +1,18 @@
-import { useSelector } from "react-redux";
-import TripWeatherCard from "../TripWetaherCard/TripWeatherCard";
-import { TripList } from "./TripBox.styled";
-import { useEffect } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
-import { useDispatch } from "react-redux";
+import {
+  TripList,
+  AiFillCaretLeftStyle,
+  AiFillCaretRightStyle,
+} from "./TripBox.styled";
+import TripWeatherCard from "../TripWetaherCard/TripWeatherCard";
 import { formatedDateForRequest } from "../../services";
 
 const TripBox = () => {
   const selectTrips = (state) => state.trips;
   const trips = useSelector(selectTrips);
-  console.log(`trips====>>>>>>`, trips);
 
   const selectFilter = (state) => state.filter;
   const filterSelector = useSelector(selectFilter);
@@ -33,23 +36,47 @@ const TripBox = () => {
       dispatch(fetchWeatherToday(trips[0].city));
       dispatch(
         fetchWeatherTime({
-          // eslint-disable-next-line react/prop-types
           city: trips[0].city,
-          // eslint-disable-next-line react/prop-types
           startDate: formatedDateForRequest(trips[0].start),
-          // eslint-disable-next-line react/prop-types
           endDate: formatedDateForRequest(trips[0].end),
         })
       );
     }
   }, []);
 
+  return <TripListContainer trips={sortedFilteredTrips} />;
+};
+
+// eslint-disable-next-line react/prop-types
+const TripListContainer = ({ trips }) => {
+  const tripListRef = useRef(null);
+
+  const handleScrollLeft = () => {
+    tripListRef.current.scrollBy({
+      top: 0,
+      left: -270,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScrollRight = () => {
+    tripListRef.current.scrollBy({
+      top: 0,
+      left: 270,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <TripList>
-      {sortedFilteredTrips?.map((trip) => (
-        <TripWeatherCard key={trip.id} props={trip} firstTrip={trips[0]} />
-      ))}
-    </TripList>
+    <>
+      <AiFillCaretLeftStyle onClick={handleScrollLeft} />
+      <TripList ref={tripListRef}>
+        {trips?.map((trip) => (
+          <TripWeatherCard key={trip.id} props={trip} firstTrip={trips[0]} />
+        ))}
+      </TripList>
+      <AiFillCaretRightStyle onClick={handleScrollRight} />
+    </>
   );
 };
 
