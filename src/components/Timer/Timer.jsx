@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { TimerBox, TimeBox, Value, Indicator } from "./Timer.styled";
+import { useSelector } from "react-redux";
 
-const Timer = ({ targetDate }) => {
+const Timer = () => {
   const calculateTimeLeft = () => {
-    const difference = new Date("2023-07-18T21:00:00.000Z") - new Date();
+    const difference = new Date() - new Date();
     if (difference < 0) {
       return {
         days: 0,
@@ -36,7 +37,7 @@ const Timer = ({ targetDate }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, []);
 
   return (
     <TimerBox>

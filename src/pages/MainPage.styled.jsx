@@ -28,8 +28,8 @@ export const InformBox = styled.div`
   width: 30vw;
   height: 100vh;
   background-image: url(${background});
-  background-size: cover; /* Змінюємо розмір фонового зображення, щоб воно покрило весь фон */
-  background-repeat: no-repeat; /* Забороняємо повторення зображення, якщо воно менше контейнера */
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   padding: 30px;
 `;

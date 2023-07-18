@@ -5,7 +5,6 @@ export const BoxForTrip = styled.div`
   padding: 15px;
   border: 1px solid #a7a7a7;
   transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Додаємо позицію relative, щоб вкласти абсолютно позиціонований AiOutlineCloseStyled */
 `;
 
 export const AiOutlineCloseStyled = styled(AiOutlineClose)`
