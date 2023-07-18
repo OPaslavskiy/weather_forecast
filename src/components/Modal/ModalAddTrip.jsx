@@ -103,6 +103,7 @@ const ModalAddTrip = ({ onClose }) => {
               <BoxDatePicker>
                 <DatePickerStyled
                   selected={startDate}
+                  dateFormat="dd/MM/yyyy"
                   onChange={(selectedDate) => {
                     setStartDate(selectedDate);
                     setFieldValue("start", selectedDate.toISOString());
@@ -123,6 +124,7 @@ const ModalAddTrip = ({ onClose }) => {
               <BoxDatePicker>
                 <DatePickerStyled
                   selected={endDate}
+                  dateFormat="dd/MM/yyyy"
                   onChange={(selectedDate) => {
                     if (!startDate) {
                       alert("Please select a start date first");
