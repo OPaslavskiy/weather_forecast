@@ -1,7 +1,14 @@
 import { useSelector } from "react-redux";
 
 import { getDayName } from "../../services";
-import { Box } from "./WeatherToday.styled";
+import {
+  Box,
+  DayOfWeek,
+  City,
+  Temp,
+  Celsii,
+  Degrees,
+} from "./WeatherToday.styled";
 
 const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items;
@@ -14,10 +21,15 @@ const WeatherToday = () => {
 
   return (
     <Box>
-      <p>{getDayName(weatherToday?.datetime)}</p>
+      <DayOfWeek>{getDayName(weatherToday?.datetime)}</DayOfWeek>
       <img src={weatherToday?.icon} alt="" />
-      <p>{Math.floor(weatherToday?.temp) + "°"}</p>
-      <p>{city}</p>
+      <Temp>
+        {Math.floor(weatherToday?.temp)}
+        <Degrees>°</Degrees>
+        <Celsii>C</Celsii>
+      </Temp>
+
+      <City>{city}</City>
     </Box>
   );
 };

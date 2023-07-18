@@ -4,7 +4,14 @@ import ModalPortal from "../components/ModalPortal/ModalPortal";
 import TripBox from "../components/TripBox/TripBox";
 import WeatherTimeBox from "../components/WeatherTimeBox/WeatherTimeBox";
 import WeatherToday from "../components/WeatherToday/WeatherToday";
-import { BoxForListAndBtn, Header, HeaderSpan } from "./MainPage.styled";
+import {
+  BoxForListAndBtn,
+  Header,
+  HeaderSpan,
+  MainBox,
+  InformBox,
+  BoxForecast,
+} from "./MainPage.styled";
 import { useState } from "react";
 
 const MainPage = () => {
@@ -15,8 +22,8 @@ const MainPage = () => {
   };
 
   return (
-    <div>
-      <div>
+    <MainBox>
+      <BoxForecast>
         <Header>
           Weather <HeaderSpan>Forecast</HeaderSpan>
         </Header>
@@ -28,11 +35,11 @@ const MainPage = () => {
         </BoxForListAndBtn>
 
         <WeatherTimeBox />
-      </div>
-      <div>
+      </BoxForecast>
+      <InformBox>
         <WeatherToday />
-      </div>
-    </div>
+      </InformBox>
+    </MainBox>
   );
 };
 
