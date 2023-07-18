@@ -6,6 +6,7 @@ import {
   DatePeriod,
   ItemTrip,
   BoxForTrip,
+  AiOutlineCloseStyled,
 } from "./TripWeatherCard.styled";
 import { cities } from "../../cities";
 import { formatedDateForRequest } from "../../services";
@@ -56,9 +57,7 @@ const TripWeatherCard = ({ props: { city, start, end, id } }) => {
         </DatePeriod>
       </BoxForTrip>
 
-      <button type="button" onClick={() => deleteCard(id)}>
-        delete
-      </button>
+      <AiOutlineCloseStyled onClick={() => deleteCard(id)} />
     </ItemTrip>
   );
 };
