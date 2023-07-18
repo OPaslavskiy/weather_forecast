@@ -1,7 +1,5 @@
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
-// import ModalAddTrip from "./components/Modal/ModalAddTrip";
-import WeatherToday from "./components/WeatherToday/WeatherToday";
 
 import MainPage from "./pages/MainPage";
 import "./calendar.css";
@@ -12,7 +10,6 @@ function App() {
       <Layout>
         <GlobalStyle />
         <MainPage />
-        <WeatherToday />
         {/* <ModalAddTrip /> */}
       </Layout>
     </>

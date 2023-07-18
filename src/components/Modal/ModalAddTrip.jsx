@@ -80,7 +80,13 @@ const ModalAddTrip = ({ onClose }) => {
                 <SpanForLabel>*</SpanForLabel>
                 City
               </LebelStyled>
-              <Field as="select" id="city" name="city" className="input-city">
+              <Field
+                as="select"
+                id="city"
+                name="city"
+                className="input-city"
+                key={nanoid()}
+              >
                 <option value="">Select a city</option>
                 {cities.map((city) => (
                   <option key={city.id} value={city.city}>

@@ -6,7 +6,7 @@ export const AddTripBtn = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 180px;
+  min-width: 180px;
   height: 180px;
   border-radius: 1px;
   background-color: #ebe8e8;
