@@ -1,17 +1,18 @@
 import { getDayName } from "../../services";
+import { DayOfWeek, Item, Temp } from "./WeatherForDay.styled";
 
 // eslint-disable-next-line react/prop-types
 const WeatherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
   const dayName = getDayName(datetime);
 
   return (
-    <li>
-      <p>{dayName}</p>
+    <Item>
+      <DayOfWeek>{dayName}</DayOfWeek>
       <img src={icon} alt="" />
-      <p>
+      <Temp>
         {Math.floor(tempmax) + "°"}/{Math.floor(tempmin) + "°"}
-      </p>
-    </li>
+      </Temp>
+    </Item>
   );
 };
 
