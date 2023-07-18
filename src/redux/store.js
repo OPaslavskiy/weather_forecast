@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { weatherTodayReducer } from "./weatherTodaySlice";
 import { weatherTimeReducer } from "./weatherTimeSlice";
 
@@ -6,7 +6,7 @@ import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -16,32 +16,30 @@ import {
 } from "redux-persist";
 import { tripsReducer } from "./tripsSlice";
 
-// import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/lib/storage";
 
-const middleware = [
-  ...getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
-];
+import { combineReducers } from "@reduxjs/toolkit";
+export const rootReducer = combineReducers({
+  weatherToday: weatherTodayReducer,
+  weatherTime: weatherTimeReducer,
+  trips: tripsReducer,
+  filter: filterReducer,
+});
 
-// const authPersistConfig = {
-//   key: 'auth',
-//   storage,
-//   whitelist: ['token'],
-// };
+const persistConfig = {
+  key: "root",
+  storage,
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    weatherToday: weatherTodayReducer,
-    weatherTime: weatherTimeReducer,
-    trips: tripsReducer,
-    filter: filterReducer,
-    // auth: persistReducer(authPersistConfig, authReducer),
-  },
-  middleware,
-  //   devTools: process.env.NODE_ENV === 'development',
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

@@ -89,7 +89,7 @@ const ModalAddTrip = ({ onClose }) => {
               >
                 <option value="">Select a city</option>
                 {cities.map((city) => (
-                  <option key={city.id} value={city.city}>
+                  <option key={nanoid()} value={city.city}>
                     {city.city}
                   </option>
                 ))}

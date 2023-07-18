@@ -29,17 +29,19 @@ const TripBox = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchWeatherToday(trips[0].city));
-    dispatch(
-      fetchWeatherTime({
-        // eslint-disable-next-line react/prop-types
-        city: trips[0].city,
-        // eslint-disable-next-line react/prop-types
-        startDate: formatedDateForRequest(trips[0].start),
-        // eslint-disable-next-line react/prop-types
-        endDate: formatedDateForRequest(trips[0].end),
-      })
-    );
+    if (trips.length > 0) {
+      dispatch(fetchWeatherToday(trips[0].city));
+      dispatch(
+        fetchWeatherTime({
+          // eslint-disable-next-line react/prop-types
+          city: trips[0].city,
+          // eslint-disable-next-line react/prop-types
+          startDate: formatedDateForRequest(trips[0].start),
+          // eslint-disable-next-line react/prop-types
+          endDate: formatedDateForRequest(trips[0].end),
+        })
+      );
+    }
   }, []);
 
   return (
