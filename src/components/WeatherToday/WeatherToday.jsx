@@ -14,15 +14,19 @@ const WeatherToday = () => {
   const selectWeatherToday = (state) => state.weatherToday.items;
   let weatherToday = useSelector(selectWeatherToday).days;
   const city = useSelector(selectWeatherToday).address;
+  console.log(weatherToday);
 
   if (weatherToday) {
     weatherToday = weatherToday[0];
   }
 
+
   return (
     <Box>
       <DayOfWeek>{getDayName(weatherToday?.datetime)}</DayOfWeek>
-      <img src={weatherToday?.icon} alt="" />
+
+      <img src={} alt="" />
+
       <Temp>
         {Math.floor(weatherToday?.temp)}
         <Degrees>°</Degrees>
