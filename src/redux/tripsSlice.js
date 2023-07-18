@@ -24,8 +24,15 @@ const trips = createSlice({
     addTrip: (state, action) => {
       state.unshift(action.payload);
     },
+    deleteTrip: (state, action) => {
+      console.table(`state====>>>>`, state[0]);
+      console.log(`action====>>>>`, action.payload);
+
+      return state.filter((trip) => trip.id !== action.payload);
+    },
   },
 });
 
+export const { deleteTrip } = trips.actions;
 export const { addTrip } = trips.actions;
 export const tripsReducer = trips.reducer;

@@ -11,25 +11,12 @@ import {
 import { cities } from "../../cities";
 import { formatedDateForRequest } from "../../services";
 import { formatedDateForPage } from "../../services";
+import { deleteTrip } from "../../redux/tripsSlice";
 
 // eslint-disable-next-line react/prop-types
-const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
+const TripWeatherCard = ({ props: { city, start, end, id }, firstTrip }) => {
+  console.log(`firstTrip=================>`, firstTrip);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    // eslint-disable-next-line react/prop-types
-    dispatch(fetchWeatherToday(firstTrip.city));
-    dispatch(
-      fetchWeatherTime({
-        // eslint-disable-next-line react/prop-types
-        city: firstTrip.city,
-        // eslint-disable-next-line react/prop-types
-        startDate: formatedDateForRequest(firstTrip.start),
-        // eslint-disable-next-line react/prop-types
-        endDate: formatedDateForRequest(firstTrip.end),
-      })
-    );
-  }, [dispatch, firstTrip]);
 
   const handlerSubmit = (
     city,
@@ -45,6 +32,11 @@ const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
       })
     );
   };
+
+  const deleteCard = (id) => {
+    dispatch(deleteTrip(id));
+  };
+
   return (
     <ItemTrip
       onClick={() =>
@@ -59,13 +51,16 @@ const TripWeatherCard = ({ props: { city, start, end }, firstTrip }) => {
         src={cities.find((image) => image.city === city)?.path}
         alt={city}
       />
-
       <BoxForTrip>
         <CityName>{city}</CityName>
         <DatePeriod>
           {formatedDateForPage(start)} - {formatedDateForPage(end)}
         </DatePeriod>
       </BoxForTrip>
+
+      <button type="button" onClick={() => deleteCard(id)}>
+        delete
+      </button>
     </ItemTrip>
   );
 };
