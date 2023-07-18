@@ -22,35 +22,6 @@ import thunderShowersNight from "./thunder-showers-night.svg";
 import thunder from "./thunder.svg";
 import wind from "./wind.svg";
 
-// export {
-//   clearDay,
-//   clearNight,
-//   cloudy,
-//   fog,
-//   hail,
-//   partlyCloudyDay,
-//   partlyCloudyNight,
-//   rainSnowShowersDay,
-//   rainSnowShowersNight,
-//   rainSnow,
-//   rain,
-//   showersDay,
-//   showersNight,
-//   sleet,
-//   snowShowersDay,
-//   snowShowersNight,
-//   snow,
-//   thunderRain,
-//   thunderShowersDay,
-//   thunderShowersNight,
-//   thunder,
-//   wind,
-// };
-
-// clear-day, clear-night, cloudy, fog, hail, partly-cloudy-day, partly-cloudy-night, rain-snow-showers-day,
-// rain-snow-showers-night, rain-snow, rain, showers-day, showers-night, sleet, snow-showers-day, snow-showers-night,
-// snow, thunder-rain, thunder-showers-day, thunder-showers-night, thunder, wind
-
 export const icons = [
   {
     id: nanoid(),

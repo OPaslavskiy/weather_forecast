@@ -5,23 +5,30 @@ import { useEffect } from "react";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
 import { useDispatch } from "react-redux";
 import { formatedDateForRequest } from "../../services";
-// import { formatedDateForPage } from "../../services";
 
 const TripBox = () => {
   const selectTrips = (state) => state.trips;
   const trips = useSelector(selectTrips);
+  console.log(`trips====>>>>>>`, trips);
 
   const selectFilter = (state) => state.filter;
-  const filter = useSelector(selectFilter);
-  const filterCity = trips.filter((trip) =>
-    trip.city.toLowerCase().includes(filter.toLowerCase())
+  const filterSelector = useSelector(selectFilter);
+  const filterTrips = trips.filter((trip) =>
+    trip.city.toLowerCase().includes(filterSelector.toLowerCase())
   );
+
+  function compareStartDates(a, b) {
+    const dateA = new Date(a.start);
+    const dateB = new Date(b.start);
+
+    return dateA - dateB;
+  }
+
+  const sortedFilteredTrips = filterTrips.sort(compareStartDates);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(`111111111111111111111`, firstTrip);
-    // eslint-disable-next-line react/prop-types
     dispatch(fetchWeatherToday(trips[0].city));
     dispatch(
       fetchWeatherTime({
@@ -37,7 +44,7 @@ const TripBox = () => {
 
   return (
     <TripList>
-      {filterCity?.map((trip) => (
+      {sortedFilteredTrips?.map((trip) => (
         <TripWeatherCard key={trip.id} props={trip} firstTrip={trips[0]} />
       ))}
     </TripList>

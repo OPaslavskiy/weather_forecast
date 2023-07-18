@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
 import {
@@ -14,8 +13,7 @@ import { formatedDateForPage } from "../../services";
 import { deleteTrip } from "../../redux/tripsSlice";
 
 // eslint-disable-next-line react/prop-types
-const TripWeatherCard = ({ props: { city, start, end, id }, firstTrip }) => {
-  console.log(`firstTrip=================>`, firstTrip);
+const TripWeatherCard = ({ props: { city, start, end, id } }) => {
   const dispatch = useDispatch();
 
   const handlerSubmit = (

@@ -6,7 +6,7 @@ import { filterReducer } from "./filterSlice";
 // import { authReducer } from "./auth/auth-slice";
 import {
   persistStore,
-  //   persistReducer,
+  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -16,7 +16,7 @@ import {
 } from "redux-persist";
 import { tripsReducer } from "./tripsSlice";
 
-// import storage from 'redux-persist/lib/storage';
+// import storage from "redux-persist/lib/storage";
 
 const middleware = [
   ...getDefaultMiddleware({
