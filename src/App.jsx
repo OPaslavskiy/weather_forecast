@@ -14,10 +14,7 @@ function App() {
       <GlobalStyle />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route>
-            <Route path="/" element={<MainPage />} />
-          </Route>
-
+          <Route path="/" element={<MainPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
