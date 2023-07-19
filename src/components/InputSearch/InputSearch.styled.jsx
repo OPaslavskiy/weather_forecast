@@ -9,9 +9,15 @@ export const FieldFormik = styled.input`
   border: none;
   background-color: #ebe8e8;
   border-radius: 6px;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &::placeholder {
     color: black;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #dbdada;
   }
 `;
 

@@ -57,11 +57,6 @@ export const CityImg = styled.img`
 `;
 
 export const DatePeriod = styled.p`
-  font-size: 10px;
+  font-size: 11px;
   color: #a7a7a7;
 `;
-
-// // Показуємо іконку при ховері або фокусі на ItemTrip
-// ItemTrip:hover ${AiOutlineCloseStyled}, ItemTrip:focus ${AiOutlineCloseStyled} {
-//   opacity: 1;
-// }
