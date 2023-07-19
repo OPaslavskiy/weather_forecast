@@ -2,7 +2,7 @@
 
 ### This project was created by Oleg Paslavsky as part of a test assignment for the IT company Reenbit, with the purpose of internship and subsequent employment.
 
-The web application "Weather Forecast" is developed using modern technologies (the list will be provided below).
+The web application "Weather Forecast" is developed using modern technologies, based on React (the list will be provided below).
 
 ---
 
