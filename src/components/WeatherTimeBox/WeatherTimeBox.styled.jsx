@@ -8,13 +8,13 @@ export const ListWeather = styled.ul`
   padding-bottom: 10px;
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
     height: 6px;
     border-radius: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: #bebebe;
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }

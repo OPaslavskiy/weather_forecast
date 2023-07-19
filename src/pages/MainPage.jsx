@@ -10,8 +10,8 @@ import {
   Header,
   HeaderSpan,
   MainBox,
-  InformBox,
-  BoxForecast,
+  InformSection,
+  ForecastSection,
 } from "./MainPage.styled";
 import { useState } from "react";
 
@@ -24,7 +24,7 @@ const MainPage = () => {
 
   return (
     <MainBox>
-      <BoxForecast>
+      <ForecastSection>
         <Header>
           Weather <HeaderSpan>Forecast</HeaderSpan>
         </Header>
@@ -36,11 +36,11 @@ const MainPage = () => {
         </BoxForListAndBtn>
 
         <WeatherTimeBox />
-      </BoxForecast>
-      <InformBox>
+      </ForecastSection>
+      <InformSection>
         <WeatherToday />
         <Timer />
-      </InformBox>
+      </InformSection>
     </MainBox>
   );
 };

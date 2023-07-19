@@ -20,7 +20,7 @@ export const MainBox = styled.div`
   display: flex;
 `;
 
-export const InformBox = styled.div`
+export const InformSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,7 +34,7 @@ export const InformBox = styled.div`
   padding: 30px;
 `;
 
-export const BoxForecast = styled.div`
+export const ForecastSection = styled.section`
   width: 70vw;
   padding: 30px;
 `;
