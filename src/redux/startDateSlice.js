@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialFilter = "";
+const initialFilter = "2023-08-01";
 
 const startDateSlice = createSlice({
   name: "date",

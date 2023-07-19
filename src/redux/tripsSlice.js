@@ -8,13 +8,6 @@ const initialState = [
     start: "2023-08-01",
     end: "2023-08-03",
   },
-
-  {
-    id: nanoid(),
-    city: "Kyiv",
-    start: "2023-08-01",
-    end: "2023-08-02",
-  },
 ];
 
 const trips = createSlice({

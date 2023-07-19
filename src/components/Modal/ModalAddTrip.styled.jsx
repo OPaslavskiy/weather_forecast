@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Form, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
+import { Form, ErrorMessage } from "formik";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 
