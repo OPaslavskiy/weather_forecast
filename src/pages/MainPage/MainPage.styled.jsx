@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { background } from "../image";
+import { background } from "../../image";
 
 export const BoxForListAndBtn = styled.div`
   display: flex;

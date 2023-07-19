@@ -1,10 +1,10 @@
-import AddTripButton from "../components/AddTripButton/AddTripButton";
-import InputSearch from "../components/InputSearch/InputSearch";
-import ModalPortal from "../components/ModalPortal/ModalPortal";
-import Timer from "../components/Timer/Timer";
-import TripBox from "../components/TripBox/TripBox";
-import WeatherTimeBox from "../components/WeatherTimeBox/WeatherTimeBox";
-import WeatherToday from "../components/WeatherToday/WeatherToday";
+import AddTripButton from "../../components/AddTripButton/AddTripButton";
+import InputSearch from "../../components/InputSearch/InputSearch";
+import ModalPortal from "../../components/ModalPortal/ModalPortal";
+import Timer from "../../components/Timer/Timer";
+import TripBox from "../../components/TripBox/TripBox";
+import WeatherTimeBox from "../../components/WeatherTimeBox/WeatherTimeBox";
+import WeatherToday from "../../components/WeatherToday/WeatherToday";
 import {
   BoxForListAndBtn,
   Header,
