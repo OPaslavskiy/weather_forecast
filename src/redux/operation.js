@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const API_KEY_WEATHER = import.meta.env.VITE_API_KEY;
 
-export const API_KEY = "8KUAFTVQBADSY7D8SJM6LWT94";
+const API_KEY = API_KEY_WEATHER;
 
 axios.defaults.baseURL =
   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
