@@ -8,26 +8,16 @@ import {
   AiFillCaretRightStyle,
 } from "./TripBox.styled";
 import TripWeatherCard from "../TripWetaherCard/TripWeatherCard";
-import { formatedDateForRequest } from "../../services";
+import { formatedDateForRequest, sortStartDates } from "../../services";
 
 const TripBox = () => {
-  const selectTrips = (state) => state.trips;
-  const trips = useSelector(selectTrips);
-
-  const selectFilter = (state) => state.filter;
-  const filterSelector = useSelector(selectFilter);
+  const trips = useSelector((state) => state.trips);
+  const filterSelector = useSelector((state) => state.filter);
   const filterTrips = trips.filter((trip) =>
     trip.city.toLowerCase().includes(filterSelector.toLowerCase())
   );
 
-  function compareStartDates(a, b) {
-    const dateA = new Date(a.start);
-    const dateB = new Date(b.start);
-
-    return dateA - dateB;
-  }
-
-  const sortedFilteredTrips = filterTrips.sort(compareStartDates);
+  const sortedFilteredTrips = filterTrips.sort(sortStartDates);
 
   const dispatch = useDispatch();
 
