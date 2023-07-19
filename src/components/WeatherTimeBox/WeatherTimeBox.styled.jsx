@@ -4,6 +4,7 @@ export const ListWeather = styled.ul`
   display: flex;
   gap: 40px;
   margin-top: 70px;
+  margin-left: 40px;
   overflow: auto;
   padding-bottom: 10px;
 

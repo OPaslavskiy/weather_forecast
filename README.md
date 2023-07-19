@@ -1,6 +1,6 @@
 # weather forecast
 
-### This project was created by Oleg Paslavsky as part of a test assignment for the IT company Reenbit, with the purpose of internship and subsequent employment.
+### This project was created by Oleg Paslavskyi as part of a test assignment for the IT company Reenbit, with the purpose of internship and subsequent employment.
 
 The web application "Weather Forecast" is developed using modern technologies, based on React (the list will be provided below).
 
@@ -67,4 +67,4 @@ npm run deploy
 
 This will deploy the app using gh-pages.
 
-### To view the website and access all its features, simply follow the link to the live page: [https://opaslavskiy.github.io/weather_forecast/]
+#### To view the website and access all its features, simply follow the link to the live page: [https://opaslavskiy.github.io/weather_forecast/]

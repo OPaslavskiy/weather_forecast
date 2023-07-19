@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
 
 export const BoxForTrip = styled.div`
-  padding: 15px;
-  border: 1px solid #a7a7a7;
+  padding: 12px;
+  border: 1px solid #ebebeb;
   transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
@@ -18,7 +18,7 @@ export const AiOutlineCloseStyled = styled(AiOutlineClose)`
   border-radius: 50%;
   border: 1px solid #fff;
   padding: 4px;
-  transition: opacity 0.2s; /* Анімація при зміні прозорості */
+  transition: opacity 0.2s;
 `;
 
 export const ItemTrip = styled.li`
@@ -37,7 +37,7 @@ export const ItemTrip = styled.li`
   }
 
   hover ${BoxForTrip} {
-    border-color: #3ab2f7; /* Зміна кольору рамки при hover */
+    border-color: #34a3e4;
   }
 
   &:hover ${AiOutlineCloseStyled} {
@@ -46,7 +46,7 @@ export const ItemTrip = styled.li`
 `;
 
 export const CityName = styled.h2`
-  font-size: 10px;
+  font-size: 11px;
   margin-bottom: 10px;
 `;
 
