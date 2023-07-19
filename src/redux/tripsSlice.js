@@ -18,9 +18,6 @@ const trips = createSlice({
       state.unshift(action.payload);
     },
     deleteTrip: (state, action) => {
-      console.table(`state====>>>>`, state[0]);
-      console.log(`action====>>>>`, action.payload);
-
       return state.filter((trip) => trip.id !== action.payload);
     },
   },

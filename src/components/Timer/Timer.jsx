@@ -6,7 +6,7 @@ import { calculateTime } from "../../services";
 const Timer = () => {
   const startDate = useSelector((state) => state.startDate);
   const [timeLeft, setTimeLeft] = useState(calculateTime());
-  console.log(startDate);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTime(startDate));
