@@ -2,8 +2,8 @@ import { getDayName } from "../../services";
 import { DayOfWeek, Item, Temp } from "./WeatherForDay.styled";
 import { icons } from "../../iconForWeather/index";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 const WeatherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
   const dayName = getDayName(datetime);
 
@@ -27,6 +27,15 @@ const WeatherForDay = ({ props: { datetime, icon, tempmax, tempmin } }) => {
       </Temp>
     </Item>
   );
+};
+
+WeatherForDay.propTypes = {
+  props: PropTypes.shape({
+    datetime: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    tempmax: PropTypes.number.isRequired,
+    tempmin: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default WeatherForDay;

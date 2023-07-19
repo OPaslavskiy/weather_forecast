@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
 import {
   CityImg,
@@ -14,7 +15,6 @@ import { formatedDateForPage } from "../../services";
 import { deleteTrip } from "../../redux/tripsSlice";
 import { setDate } from "../../redux/startDateSlice";
 
-// eslint-disable-next-line react/prop-types
 const TripWeatherCard = ({ props: { city, start, end, id } }) => {
   const dispatch = useDispatch();
 
@@ -62,6 +62,15 @@ const TripWeatherCard = ({ props: { city, start, end, id } }) => {
       <AiOutlineCloseStyled onClick={() => deleteCard(id)} />
     </ItemTrip>
   );
+};
+
+TripWeatherCard.propTypes = {
+  props: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default TripWeatherCard;

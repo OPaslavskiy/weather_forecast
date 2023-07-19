@@ -1,6 +1,6 @@
 import { AddTripBtn, Plus } from "./AddTripButton.styled";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 const AddTripButton = ({ toggleModal }) => {
   return (
     <AddTripBtn type="button" onClick={toggleModal}>
@@ -8,6 +8,10 @@ const AddTripButton = ({ toggleModal }) => {
       Add trip
     </AddTripBtn>
   );
+};
+
+AddTripButton.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default AddTripButton;

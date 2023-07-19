@@ -4,16 +4,16 @@ import { useSelector } from "react-redux";
 import { calculateTime } from "../../services";
 
 const Timer = () => {
-  const startDate = useSelector((state) => state);
+  const startDate = useSelector((state) => state.startDate);
   const [timeLeft, setTimeLeft] = useState(calculateTime());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTime(startDate.startDate));
+      setTimeLeft(calculateTime(startDate));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [startDate.startDate]);
+  }, [startDate]);
 
   return (
     <TimerBox>

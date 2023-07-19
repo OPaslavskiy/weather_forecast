@@ -2,6 +2,7 @@ import { Formik, Field } from "formik";
 import { date, object, string } from "yup";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 
 import { nanoid } from "nanoid";
 
@@ -43,7 +44,6 @@ const initialValues = {
   end: null,
 };
 
-// eslint-disable-next-line react/prop-types
 const ModalAddTrip = ({ onClose }) => {
   const dispatch = useDispatch();
   const [startDate, setStartDate] = useState(null);
@@ -159,6 +159,10 @@ const ModalAddTrip = ({ onClose }) => {
       </Formik>
     </Modal>
   );
+};
+
+ModalAddTrip.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ModalAddTrip;

@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchWeatherToday, fetchWeatherTime } from "../../redux/operation";
+import PropTypes from "prop-types";
 import {
   TripList,
   AiFillCaretLeftStyle,
@@ -37,7 +37,6 @@ const TripBox = () => {
   return <TripListContainer trips={sortedFilteredTrips} />;
 };
 
-// eslint-disable-next-line react/prop-types
 const TripListContainer = ({ trips }) => {
   const tripListRef = useRef(null);
 
@@ -68,6 +67,17 @@ const TripListContainer = ({ trips }) => {
       <AiFillCaretRightStyle onClick={handleScrollRight} />
     </>
   );
+};
+
+TripListContainer.propTypes = {
+  trips: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      start: PropTypes.string.isRequired,
+      end: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default TripBox;
