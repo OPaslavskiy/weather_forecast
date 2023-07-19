@@ -338,8 +338,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     color: #3ab2f7;
   }
 `,Rx=q.div`
-  padding: 15px;
-  border: 1px solid #a7a7a7;
+  padding: 12px;
+  border: 1px solid #ebebeb;
   transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `,Ax=q(cx)`
   font-size: 20px;
@@ -352,7 +352,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   border-radius: 50%;
   border: 1px solid #fff;
   padding: 4px;
-  transition: opacity 0.2s; /* Анімація при зміні прозорості */
+  transition: opacity 0.2s;
 `,K3=q.li`
   display: flex;
   flex-direction: column;
@@ -369,14 +369,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
 
   hover ${Rx} {
-    border-color: #3ab2f7; /* Зміна кольору рамки при hover */
+    border-color: #34a3e4;
   }
 
   &:hover ${Ax} {
     opacity: 1;
   }
 `,G3=q.h2`
-  font-size: 10px;
+  font-size: 11px;
   margin-bottom: 10px;
 `,X3=q.img`
   width: 180px;
@@ -401,6 +401,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   display: flex;
   gap: 40px;
   margin-top: 70px;
+  margin-left: 40px;
   overflow: auto;
   padding-bottom: 10px;
 
