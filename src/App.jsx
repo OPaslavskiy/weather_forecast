@@ -6,7 +6,7 @@ import { lazy, Suspense } from "react";
 
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 const MainPage = lazy(() => import("./pages/MainPage/MainPage"));
-import "./calendar.css";
+// import "./calendar.css";
 
 function App() {
   return (
